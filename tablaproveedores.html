@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRAGANCES D'S</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+       /* Estilos CSS aquí */
+       body {
+            font-family: Arial, sans-serif;
+            margin: 7;
+            padding: 7;
+            background-image: url(img/fondo4.jpg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        
+             text-align: center;
+        }
+        footer {
+    background-color: #111010; /* Color naranja */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 0; /* Elimina el margen inferior */
+}
+       
+        /* Estilos del menú desplegable */
+        .menu-btn {
+    position: fixed;
+    top: 10px;
+    left: 160px;
+    z-index: 99999; /* Aumenta el valor del z-index para que esté por encima de todo */
+    cursor: pointer;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #000000;
+    padding: 20px;
+    transition: left 0.3s;
+    z-index: 99998; /* Aumenta el valor del z-index para que esté por encima del contenido */
+    border: 2px solid rgb(255, 255, 255);
+}
+
+  
+        .menu-btn span {
+            display: block;
+            width: 30px;
+            height: 2px;
+            background-color: #ffffff;
+            margin-bottom: 5px;
+            
+        }
+  
+        #menu-toggle {
+            display: none;
+            
+        }
+  
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            
+        }
+  
+        .menu ul li {
+            margin-bottom: 10px;
+            
+        }
+  
+        .menu ul li a {
+            display: block;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 14px;
+            padding: 5px 8px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            border: 2px solid rgb(255, 255, 255);
+        }
+  
+        .menu ul li a:hover {
+            background-color: #4d4e4e;
+        }
+  
+        #menu-toggle:checked ~ .menu {
+            left: 0;
+        }
+
+        /* Estilos para el menú responsive */
+        @media (max-width: 576px) {
+            .menu {
+                width: 100%;
+                left: -100%;
+            }
+
+            #menu-toggle:checked ~ .menu {
+                left: 0;
+            }
+        }
+  
+      
+
+        /* Estilos para el párrafo */
+        p {
+            margin: 0; /* Elimina el margen predeterminado del párrafo */
+            padding: 10px; /* Agrega espacio entre el texto y el borde de la caja */
+        }
+
+        /* Estilos para el footer */
+        footer {
+            background-color: #111010; /* Color naranja */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Estilos generales */
+        h1 {
+            font-size: 36px;
+            color: #333; /* Color del texto principal */
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+  
+        .logo img {
+            width: 150px;
+            height: 90px;
+            margin-right: 10px;
+        }
+  
+        .logo h1 {
+            font-size: 24px;
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
+        }
+        
+/* Estilos de la sección de imágenes */
+.image-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Cambiamos a 2 columnas */
+    grid-gap: 20px;
+}
+
+.image-container {
+    text-align: center;
+    position: relative; /* Agregamos posicionamiento relativo para alinear elementos secundarios */
+}
+
+.image-container img {
+    height: 660px;; /* Cambiamos height a max-height para mantener la proporción */
+    width: 660px; /* Cambiamos width a max-width para mantener la proporción */
+    object-fit: contain; /* Utilizamos object-fit: contain para que la imagen se ajuste dentro del contenedor */
+    
+    border-radius: 4px;
+    transition: transform 0.3s ease; /* Agregamos transición para suavizar el efecto */
+}
+
+.image-container:hover img {
+    transform: scale(1.1); /* Aplicamos una escala al pasar el mouse por encima */
+}
+
+.image-container p {
+    margin-top: 0; /* Eliminamos el margen superior del párrafo */
+    margin-bottom: 0; /* Eliminamos el margen inferior del párrafo */
+}
+/* Estilos de la sección de imágenes2 */
+.image-section2 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Cambiamos a 2 columnas */
+    grid-gap: 20px;
+}
+
+.image-container2 {
+    text-align: center;
+    position: relative; /* Agregamos posicionamiento relativo para alinear elementos secundarios */
+}
+
+.image-container2 img {
+    max-height: 100%; /* Cambiamos height a max-height para mantener la proporción */
+    max-width: 100%; /* Cambiamos width a max-width para mantener la proporción */
+    object-fit: contain; /* Utilizamos object-fit: contain para que la imagen se ajuste dentro del contenedor */
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    transition: transform 0.3s ease; /* Agregamos transición para suavizar el efecto */
+}
+
+.image-container2:hover img {
+    transform: scale(1.1); /* Aplicamos una escala al pasar el mouse por encima */
+}
+
+.image-container2 p {
+    margin-top: 0; /* Eliminamos el margen superior del párrafo */
+    margin-bottom: 0; /* Eliminamos el margen inferior del párrafo */
+}
+
+table {
+            border-collapse: collapse;
+            background-color: #000000;
+            border-radius: 30px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        td {
+            padding: 30px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #333; /* Cambiar el color del texto aquí */
+        }
+
+        p {
+            color: #ffffff; /* Cambiar el color del texto de los párrafos aquí */
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+  
+    </div>
+    <div class="container">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav class="menu">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">INICIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="formularioproductos.html">formulario productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="formularioclientes.html">formulario clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="formularioventas.html">formulario ventas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="formulariodetallesalaventa.html">formulario detalles de venta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="formularioproveedores.html">formulario proveedor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="formulariampleados.html">formulario empleados</a>
+                </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="tablaproductos.html">tabla productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tablaclientes.html">tabla clientes</a>
+                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tablaventas.html">tabla ventas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tabladetallesdeventa.html">tabla detalles de venta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tablaproveedores.html">tabla proveedor</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tablaempleados.html">tabla empleados</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+            </ul>
+        </nav>
+    </div>
+
+    </div>
+
+    <div>
+        <section class="image-section">
+            <div class="image-container">
+              <a href=""><img src="img/proveedores.png" alt="Imagen 6"></a>
+        
+            </div>
+            <div class="image-container">
+              <a href=""> <img src="img/proveedores2.png" alt="Imagen 7"></a>
+     
+            </div>
+        </section>
+        </div>
+    <div class="footer">
+        <footer>
+            <p>&copy; 2023 Tienda de Perfumes. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
